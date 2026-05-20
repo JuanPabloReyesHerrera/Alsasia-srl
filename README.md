@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alsasia SRL — Sitio Web Oficial
 
-## Getting Started
+Sitio web institucional de **Alsasia SRL**, estancia ganadera con más de 100 años de historia. Diseñado para comunicar herencia, estatus y confianza a través de una experiencia visual premium.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack
+
+| Capa            | Tecnología                                   |
+| --------------- | -------------------------------------------- |
+| Framework       | Next.js 15 + React 19                        |
+| Lenguaje        | TypeScript                                   |
+| Estilos         | Tailwind CSS v4                              |
+| Componentes     | shadcn/ui · Radix UI · Lucide React          |
+| Utilidades      | clsx · tailwind-merge · CVA · tw-animate-css |
+| Package manager | pnpm                                         |
+
+---
+
+## Arquitectura
+
+El proyecto sigue **Screaming Architecture** — la estructura de carpetas refleja los dominios de negocio, no los tipos técnicos.
+
+```
+src/
+├── landing/          # Hero, propuesta de valor, secciones principales
+├── catalog/          # Catálogo de toros
+├── about/            # Historia y equipo
+└── shared/           # Elementos transversales (layout, UI base, utils)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Secciones
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Landing** — Hero principal con identidad visual de la estancia
+- **Catálogo de toros** — Ficha y galería de reproductores disponibles
+- **Sobre nosotros** — Historia centenaria, valores y equipo
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Desarrollo local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Instalar dependencias
+pnpm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Servidor de desarrollo
+pnpm dev
 
-## Deploy on Vercel
+# Build de producción
+pnpm build
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Preview del build
+pnpm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+---
+
+## Deploy
+
+El proyecto está desplegado en **Vercel**. Cada push a `main` dispara un deploy automático.
+
+---
+
+## Licencia
+
+Todos los derechos reservados © Alsasia SRL
