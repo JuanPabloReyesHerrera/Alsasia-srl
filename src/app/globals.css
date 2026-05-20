@@ -1,26 +1,275 @@
+/* ══════════════════════════════════════════════════════
+   CABAÑA NOGAL DEL RIO — globals.css
+   Stack : Next.js · Tailwind v4 · shadcn
+   Colores: oklch — perceptualmente uniforme, opacity nativa
+   ══════════════════════════════════════════════════════
+
+   LIGHT → "Pergamino Tropical"  crema cálida · guindo · oro viejo
+   DARK  → "Atardecer Brahman"   negro cálido · guindo · ámbar vivo
+
+   Con oklch los valores son colores COMPLETOS (no componentes).
+   En componentes reemplaza  hsl(var(--x))  por  var(--x)
+   y  hsl(var(--x) / 0.3)  por  color-mix(in oklch, var(--x) 30%, transparent)
+   Las utilidades de Tailwind con opacidad (bg-primary/50) siguen igual.
+   ══════════════════════════════════════════════════════ */
+
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ──────────────────────────────────────────────────────
+   Variante dark — activa con clase .dark en <html>
+   ────────────────────────────────────────────────────── */
+@custom-variant dark (&:is(.dark *));
 
+/* ══════════════════════════════════════════════════════
+   @theme inline
+   Con oklch las vars ya son colores completos,
+   el mapeo es directo con var() — sin wrapper hsl().
+   ══════════════════════════════════════════════════════ */
 @theme inline {
+  /* ── Superficies ── */
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+
+  /* ── Texto ── */
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
+
+  /* ── Primary — Guindo ── */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  /* ── Accent — Ámbar / Oro ── */
+  --color-accent: var(--accent);
+  --color-accent-warm: var(--accent-warm);
+  --color-accent-foreground: var(--accent-foreground);
+
+  /* ── shadcn aliases ── */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* ── Tipografía ── */
+  /* next/font inyecta --font-playfair y --font-jost en <html> */
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-jost), system-ui, sans-serif;
+
+  /* ── Border radius ── */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ══════════════════════════════════════════════════════
+   LIGHT MODE — "Pergamino Tropical"
+   Crema cálida · guindo oscuro · oro viejo
+   ══════════════════════════════════════════════════════ */
+:root {
+  /* ── Superficies ──────────────────────────────────── */
+  --background: oklch(0.95 0.025 84); /* #F5EDDC  Pergamino        */
+  --surface: oklch(0.91 0.028 80); /* #EDE0C8  Tarjetas         */
+  --surface-muted: oklch(0.87 0.026 76); /* #E3D4B8  Inputs           */
+
+  /* ── Texto ───────────────────────────────────────── */
+  --foreground: oklch(0.1 0.022 30); /* #1A0A06  Tierra oscura    */
+  --foreground-muted: oklch(0.42 0.028 58); /* #6B5A48  Secundario       */
+  --foreground-subtle: oklch(0.62 0.024 64); /* #9E8C78  Muy atenuado     */
+
+  /* ── Primary — Guindo ────────────────────────────── */
+  --primary: oklch(0.26 0.108 22); /* #5C1515                   */
+  --primary-foreground: oklch(0.95 0.025 84); /* #F5EDDC                   */
+
+  /* ── Accent — Oro Viejo ──────────────────────────── */
+  --accent: oklch(0.48 0.09 68); /* #8B6520                   */
+  --accent-warm: oklch(0.68 0.098 64); /* #C4924A  Hover / claro    */
+  --accent-foreground: oklch(0.95 0.025 84); /* #F5EDDC                   */
+
+  /* ── Borders ─────────────────────────────────────── */
+  --border: oklch(0.84 0.013 54);
+  --input: oklch(0.85 0.018 78);
+  --ring: oklch(0.48 0.09 68); /* = accent                  */
+
+  /* ── Nav ─────────────────────────────────────────── */
+  --nav-border: oklch(0.84 0.013 54);
+
+  /* ── shadcn aliases ──────────────────────────────── */
+  --card: oklch(0.91 0.028 80);
+  --card-foreground: oklch(0.1 0.022 30);
+  --popover: oklch(0.95 0.025 84);
+  --popover-foreground: oklch(0.1 0.022 30);
+  --secondary: oklch(0.87 0.026 76);
+  --secondary-foreground: oklch(0.1 0.022 30);
+  --muted: oklch(0.87 0.026 76);
+  --muted-foreground: oklch(0.42 0.028 58);
+  --destructive: oklch(0.4 0.16 22);
+  --destructive-foreground: oklch(0.95 0.025 84);
+
+  /* ── Misc ────────────────────────────────────────── */
+  --radius: 0.375rem;
+}
+
+/* ══════════════════════════════════════════════════════
+   DARK MODE — "Atardecer Brahman"
+   Negro cálido · guindo profundo · ámbar del atardecer
+   ══════════════════════════════════════════════════════ */
+.dark {
+  /* ── Superficies ──────────────────────────────────── */
+  --background: oklch(0.07 0.01 44); /* #0C0805  Negro cálido     */
+  --surface: oklch(0.12 0.014 46); /* #1A1008  Elevada          */
+  --surface-muted: oklch(0.15 0.015 44); /* #201409  Cards / inputs   */
+
+  /* ── Texto ───────────────────────────────────────── */
+  --foreground: oklch(0.93 0.022 84); /* #F0E8D5  Crema            */
+  --foreground-muted: oklch(0.56 0.038 62); /* #9A8060  Secundario       */
+  --foreground-subtle: oklch(0.38 0.028 58); /* #5E4E3A  Muy atenuado     */
+
+  /* ── Primary — Guindo ────────────────────────────── */
+  --primary: oklch(0.28 0.118 22); /* #6B1515                   */
+  --primary-foreground: oklch(0.93 0.022 84); /* #F0E8D5                   */
+
+  /* ── Accent — Ámbar del Atardecer ────────────────── */
+  --accent: oklch(0.65 0.148 58); /* #D4891A                   */
+  --accent-warm: oklch(0.8 0.118 76); /* #E8C06A  Hover / claro    */
+  --accent-foreground: oklch(0.07 0.01 44); /* #0C0805                   */
+
+  /* ── Borders ─────────────────────────────────────── */
+  --border: oklch(0.18 0.014 46);
+  --input: oklch(0.16 0.016 44);
+  --ring: oklch(0.65 0.148 58); /* = accent                  */
+
+  /* ── shadcn aliases ──────────────────────────────── */
+  --card: oklch(0.12 0.014 46);
+  --card-foreground: oklch(0.93 0.022 84);
+  --popover: oklch(0.15 0.015 44);
+  --popover-foreground: oklch(0.93 0.022 84);
+  --secondary: oklch(0.15 0.015 44);
+  --secondary-foreground: oklch(0.93 0.022 84);
+  --muted: oklch(0.15 0.015 44);
+  --muted-foreground: oklch(0.56 0.038 62);
+  --destructive: oklch(0.45 0.165 22);
+  --destructive-foreground: oklch(0.93 0.022 84);
+}
+
+/* ══════════════════════════════════════════════════════
+   BASE
+   ══════════════════════════════════════════════════════ */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklch, var(--accent) 30%, transparent);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklch, var(--accent) 55%, transparent);
+  }
+
+  /* ── Selección de texto ── */
+  ::selection {
+    background: color-mix(in oklch, var(--accent) 22%, transparent);
+    color: var(--foreground);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ══════════════════════════════════════════════════════
+   UTILIDADES DE MARCA
+   color-mix() reemplaza la sintaxis hsl(var(--x) / alpha)
+   ══════════════════════════════════════════════════════ */
+@layer utilities {
+  /* Eyebrow — etiqueta de sección */
+  .text-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  /* Degradado de texto dorado */
+  .text-gradient-gold {
+    background: linear-gradient(
+      135deg,
+      var(--accent-warm) 0%,
+      var(--accent) 60%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Línea decorativa horizontal */
+  .rule-accent {
+    display: block;
+    width: 2.75rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  /* Línea decorativa vertical */
+  .rule-accent-v {
+    display: block;
+    width: 1px;
+    height: 3rem;
+    background: var(--accent);
+  }
+
+  /* Glass cálido */
+  .glass-warm {
+    background: color-mix(in oklch, var(--surface) 70%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid color-mix(in oklch, var(--border) 20%, transparent);
+  }
+
+  /* Badge de estado */
+  .badge-accent {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.6rem;
+    font-size: 7.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: var(--primary);
+    color: var(--accent);
+    border: 1px solid color-mix(in oklch, var(--accent) 28%, transparent);
+    border-radius: 2px;
+  }
 }
