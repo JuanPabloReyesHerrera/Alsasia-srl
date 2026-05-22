@@ -12,7 +12,7 @@ export function BackgroundImage({
   className,
 }: BackGroundImageProps) {
   return (
-    <div className={`sticky top-0 h-dvh w-full ${className} `}>
+    <div className={`sticky top-0 h-dvh w-full ${className}`}>
       <div className={`relative inset-0 w-full h-full `}>
         <Image
           className={`object-cover`}

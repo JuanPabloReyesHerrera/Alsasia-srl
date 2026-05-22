@@ -14,10 +14,7 @@ export function NavBar() {
       <div className="h-full flex items-center justify-between px-2 md:px-6">
         {/* Logo aquí */}
         <Button variant={"ghost"}>
-          <Link
-            href={"/"}
-            className="flex items-center justify-start xl:gap-10"
-          >
+          <Link href={"/"} className="flex items-center justify-start xl:gap-4">
             <Image src={"/brand_logo.svg"} alt="AN" width={50} height={50} />
             <h1 className="border border-primary py-1.5 px-4 rounded-[60%/60%] shadow-sm shadow-foreground/40 items-center hidden xl:block">
               Alsasi SRL

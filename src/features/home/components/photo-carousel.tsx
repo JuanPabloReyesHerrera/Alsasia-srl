@@ -106,16 +106,16 @@ export function PhotoCarousel() {
               key={photo.id}
               onClick={() => goTo(i)}
               aria-label={photo.alt}
-              className="absolute top-1/2 -translate-y-1/2 cursor-pointer overflow-hidden rounded-sm border-0 bg-transparent p-0 outline-none"
+              className="absolute top-1/2 -translate-y-1/2 cursor-pointer overflow-hidden rounded-sm bg-transparent p-0 outline-none"
               style={{
-                width: 480,
-                height: 360,
+                width: "clamp(380px, 38vw, 480px)",
+                height: "clamp(335px, 28.5vw, 360px)",
                 ...styleMap[pos],
                 transition: `all ${TRANSITION_MS}ms cubic-bezier(0.4, 0, 0.2, 1)`,
               }}
             >
               {/* Gold frame border */}
-              <span
+              {/* <span
                 className="pointer-events-none absolute inset-0 z-10"
                 style={{
                   boxShadow:
@@ -124,7 +124,7 @@ export function PhotoCarousel() {
                       : "inset 0 0 0 1px color-mix(in oklch, var(--accent) 20%, transparent)",
                   transition: `box-shadow ${TRANSITION_MS}ms ease`,
                 }}
-              />
+              /> */}
               <img
                 src={photo.src}
                 alt={photo.alt}
@@ -134,13 +134,13 @@ export function PhotoCarousel() {
               />
               {/* Caption overlay — only active */}
               <span
-                className="absolute bottom-0 left-0 right-0 flex flex-col items-center pb-5 pt-12"
-                style={{
-                  background:
-                    "linear-gradient(to top, color-mix(in oklch, var(--foreground) 85%, transparent) 0%, transparent 100%)",
-                  opacity: pos === "center" ? 1 : 0,
-                  transition: `opacity ${TRANSITION_MS}ms ease`,
-                }}
+                className="absolute bg-linear-to-t from-foreground bottom-0 left-0 right-0 flex flex-col items-center pb-5 pt-12"
+                // style={{
+                //   background:
+                //     "linear-gradient(to top, color-mix(in oklch, var(--foreground) 85%, transparent) 0%, transparent 100%)",
+                //   opacity: pos === "center" ? 1 : 0,
+                //   transition: `opacity ${TRANSITION_MS}ms ease`,
+                // }}
               >
                 <span className="text-eyebrow">{photo.caption}</span>
               </span>

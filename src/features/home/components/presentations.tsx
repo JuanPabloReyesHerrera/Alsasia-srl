@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function Presentations() {
   return (
-    <div className="relative z-10 flex flex-col h-fit w-dvw items-center justify-center md:items-center bg-amber-500">
+    <div className="relative z-10 flex flex-col h-full w-dvw items-center justify-center md:items-center">
       <div className="w-full mx-4 sm:mx-20 max-w-8xl h-full grid md:grid-cols-2 gap-10 lg:gap-0">
         {/* Panel — ocupa el 46% derecho en desktop, full en mobile */}
         <LeftPresentation />
@@ -146,7 +146,8 @@ function LeftPresentation() {
       <div
         className={cn(
           // Agregamos max-h-full para capar la altura y forzar al ancho a adaptarse
-          "relative hidden md:flex items-center justify-center w-[80%] sm:w-[80%] md:w-full lg:w-[90%] xl:w-[60%] 2xl:w-[50%] max-h-full aspect-square",
+          "relative hidden md:flex items-center justify-center w-[80%] sm:w-[80%] md:w-full lg:w-[90%] xl:w-[60%] 2xl:w-[50%] max-h-full aspect-4/3",
+          " rounded-4xl overflow-hidden",
           slideIn.left,
           "duration-1000",
         )}
@@ -156,7 +157,7 @@ function LeftPresentation() {
           alt="tabla"
           fill
           sizes="(max-width: 1024px) 40vw, (max-width: 1536px) 35vw, 30vw"
-          className="object-contain rounded-2xl drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
+          className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] rounded-4xl"
         />
       </div>
     </div>

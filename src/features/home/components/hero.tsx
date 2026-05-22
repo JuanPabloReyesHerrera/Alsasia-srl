@@ -39,18 +39,17 @@ export function Hero({
   imageAlt = "Manada de toros Brahman al atardecer — Santa Rosa, Beni",
 }: HeroProps) {
   return (
-    <div>
+    <div className="flex flex-col overflow-hidden">
       {/* ── Imagen de fondo ─────────────────────────── */}
       <BackgroundImage imageSrc={imageSrc} alt={imageAlt} />
       <section
         aria-label="Hero principal"
-        className="relative flex h-[200dvh] w-full flex-col overflow-hidden mt-[-100dvh]"
+        className="relative flex flex-col h-[calc(100dvh-72px)] w-full mt-[-100dvh]"
       >
         {/* ── Contenido ────────────────────────────────── */}
         <OverlayHero />
         <HeroTitle />
         <Presentations />
-        <PhotoCarousel />
 
         {/* ── Badge superior izquierdo (solo desktop) ── */}
 
@@ -65,6 +64,9 @@ export function Hero({
         >
           — Genética de Élite · Brahman Americano —
         </p>
+      </section>
+      <section className="w-full h-dvh">
+        <PhotoCarousel />
       </section>
     </div>
   );
