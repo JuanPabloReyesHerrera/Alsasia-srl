@@ -60,7 +60,7 @@ export function MobileNavBar({
   }, [pathname]);
 
   return (
-    <div className={cn("md:hidden", className)}>
+    <div className={cn("lg:hidden", className)}>
       <Sheet open={open} onOpenChange={setOpen}>
         {/* ── Trigger ───────────────────────────── */}
         <SheetTrigger asChild>

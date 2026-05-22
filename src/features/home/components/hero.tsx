@@ -18,6 +18,7 @@ import { Presentations } from "./presentations";
 import { slideIn, cn } from "@/lib/utils";
 import { HeroTitle } from "./hero-title";
 import { BackgroundImage } from "@/components/ui/background-image";
+import { PhotoCarousel } from "./photo-carousel";
 
 /* ─────────────────────────────────────────────
    Props
@@ -38,17 +39,18 @@ export function Hero({
   imageAlt = "Manada de toros Brahman al atardecer — Santa Rosa, Beni",
 }: HeroProps) {
   return (
-    <>
+    <div>
       {/* ── Imagen de fondo ─────────────────────────── */}
       <BackgroundImage imageSrc={imageSrc} alt={imageAlt} />
       <section
         aria-label="Hero principal"
-        className="relative flex min-h-svh w-full flex-col overflow-hidden pb-18 mt-[-100dvh]"
+        className="relative flex h-[200dvh] w-full flex-col overflow-hidden mt-[-100dvh]"
       >
-        <OverlayHero />
         {/* ── Contenido ────────────────────────────────── */}
+        <OverlayHero />
         <HeroTitle />
         <Presentations />
+        <PhotoCarousel />
 
         {/* ── Badge superior izquierdo (solo desktop) ── */}
 
@@ -63,9 +65,8 @@ export function Hero({
         >
           — Genética de Élite · Brahman Americano —
         </p>
-        <LowerSignature />
       </section>
-    </>
+    </div>
   );
 }
 
@@ -81,40 +82,8 @@ function OverlayHero() {
       {/* ── Overlay mobile ───────────────────────────── */}
       <div
         aria-hidden
-        className="bg-linear-to-t from-surface-muted to-transparent absolute inset-0 block md:hidden"
+        className="bg-linear-to-t from-background to-transparent absolute inset-0 block md:hidden"
       />
-    </>
-  );
-}
-
-/* ── Firma — inferior izquierdo (solo desktop) ── */
-function LowerSignature() {
-  return (
-    <>
-      <div
-        aria-hidden
-        className={cn(
-          "absolute bottom-22 left-8 z-10 hidden items-end gap-4 md:flex",
-          slideIn.left,
-          "duration-1000",
-        )}
-      >
-        <span className="block w-px self-stretch bg-accent-warm" />
-        <div className="flex flex-col gap-1.5">
-          <p className="font-serif text-[13px] font-normal italic leading-none text-foreground/85">
-            Nogales del Rio
-          </p>
-          <p
-            className="text-[7.5px] font-light leading-none tracking-[0.24em] uppercase"
-            style={{ color: "hsl(var(--accent))" }}
-          >
-            Santa Rosa · Beni · Bolivia
-          </p>
-          <p className="font-serif text-[11px] leading-none text-foreground/30">
-            Est. 1924
-          </p>
-        </div>
-      </div>
     </>
   );
 }

@@ -42,7 +42,7 @@ export function DesktopNavBar({
   const pathname = usePathname();
 
   return (
-    <nav className={cn("hidden items-center md:flex", className)}>
+    <nav className={cn("hidden items-center lg:flex", className)}>
       <NavigationMenu>
         <NavigationMenuList className="gap-0">
           {links.map(({ label, href, external }) => {

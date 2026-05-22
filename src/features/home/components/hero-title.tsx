@@ -50,7 +50,7 @@ export function HeroTitle({
         pinyonScript.variable,
         cormorant.variable,
         montserrat.variable,
-        "absolute min-h-screen w-full overflow-hidden",
+        "w-full",
         "animate-in fade-in duration-800",
         className,
       )}
@@ -60,7 +60,7 @@ export function HeroTitle({
       }}
     >
       {/* Text block — centered, upper-third positioning */}
-      <div className="absolute inset-0 flex flex-col items-center justify-start pt-[10vh] px-4 text-center">
+      <div className="flex flex-col items-center justify-start pt-[10vh] px-4 text-center">
         {/* Main script title */}
         <h1 className="font-[family-name:var(--font-pinyon)] text-[clamp(3rem,8vw,6.5rem)] font-normal leading-none text-foreground drop-shadow-[0_2px_24px_rgba(0,0,0,0.55)] mb-2">
           {title}

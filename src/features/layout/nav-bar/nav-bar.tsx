@@ -11,12 +11,15 @@ import Link from "next/link";
 export function NavBar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 h-18 border-b bg-background ">
-      <div className="h-full flex items-center justify-between px-2 md:px-10">
+      <div className="h-full flex items-center justify-between px-2 md:px-6">
         {/* Logo aquí */}
         <Button variant={"ghost"}>
-          <Link href={"/"} className="flex items-center justify-start gap-4">
+          <Link
+            href={"/"}
+            className="flex items-center justify-start xl:gap-10"
+          >
             <Image src={"/brand_logo.svg"} alt="AN" width={50} height={50} />
-            <h1 className="border border-primary py-1.5 px-4 rounded-[60%/60%] shadow-sm shadow-foreground/40 items-center">
+            <h1 className="border border-primary py-1.5 px-4 rounded-[60%/60%] shadow-sm shadow-foreground/40 items-center hidden xl:block">
               Alsasi SRL
             </h1>
           </Link>
@@ -29,7 +32,7 @@ export function NavBar() {
           asChild
           size="sm"
           className={cn(
-            "hidden md:flex",
+            "hidden lg:flex",
             "ml-5 rounded-none",
             "bg-primary hover:bg-primary/85",
             "text-accent",
