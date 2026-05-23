@@ -171,7 +171,7 @@ function LowerSignature() {
     <div
       aria-hidden
       className={cn(
-        "absolute bottom-0 left-8 z-10 hidden items-end gap-4 md:flex",
+        "absolute bottom-4 left-8 z-10 hidden items-end gap-4 md:flex",
         slideIn.left,
         "duration-1000",
       )}

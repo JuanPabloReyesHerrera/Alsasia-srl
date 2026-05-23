@@ -39,12 +39,12 @@ export function Hero({
   imageAlt = "Manada de toros Brahman al atardecer — Santa Rosa, Beni",
 }: HeroProps) {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="relative flex flex-col h-[200dvh] overflow-hidden">
       {/* ── Imagen de fondo ─────────────────────────── */}
       <BackgroundImage imageSrc={imageSrc} alt={imageAlt} />
       <section
         aria-label="Hero principal"
-        className="relative flex flex-col h-[calc(100dvh-72px)] w-full mt-[-100dvh]"
+        className="relative flex flex-col h-dvh w-full mt-[-100dvh]"
       >
         {/* ── Contenido ────────────────────────────────── */}
         <OverlayHero />
