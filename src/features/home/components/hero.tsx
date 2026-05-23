@@ -44,7 +44,7 @@ export function Hero({
       <BackgroundImage imageSrc={imageSrc} alt={imageAlt} />
       <section
         aria-label="Hero principal"
-        className="relative flex flex-col h-dvh w-full mt-[-100dvh]"
+        className="flex flex-col h-dvh w-full "
       >
         {/* ── Contenido ────────────────────────────────── */}
         <OverlayHero />
