@@ -1,0 +1,1 @@
+export { VisionMisionSection } from './VisionMisionSection'

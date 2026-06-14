@@ -147,7 +147,7 @@ function LeftPresentation() {
         className={cn(
           // Agregamos max-h-full para capar la altura y forzar al ancho a adaptarse
           "relative hidden md:flex items-center justify-center w-[80%] sm:w-[80%] md:w-full lg:w-[90%] xl:w-[60%] 2xl:w-[50%] max-h-full aspect-4/3",
-          " rounded-4xl overflow-hidden",
+          "rounded-3xl",
           slideIn.left,
           "duration-1000",
         )}
@@ -157,7 +157,7 @@ function LeftPresentation() {
           alt="tabla"
           fill
           sizes="(max-width: 1024px) 40vw, (max-width: 1536px) 35vw, 30vw"
-          className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] rounded-4xl"
+          className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]"
         />
       </div>
     </div>

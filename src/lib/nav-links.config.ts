@@ -10,11 +10,15 @@ export type NavLink = {
 
 export const NAV_LINKS: NavLink[] = [
   { label: "Inicio", href: "/" },
-  { label: "Catálogo", href: "/catalogo" },
-  { label: "Legado", href: "/legado" },
-  { label: "Instalaciones", href: "/instalaciones" },
-  { label: "Remates", href: "/remates" },
-  { label: "Asesoría Genética", href: "/genetica" },
-  { label: "Equipo", href: "/equipo" },
+  // { label: "Catálogo", href: "/catalogo" },
+  { label: "Programa Genético", href: "/programa-genetico" },
+  {
+    label: "Visión, Misión Y Pilares De La Empresa",
+    href: "/vision-mision-y-pilares-de-la-empresa",
+  },
+  // { label: "Legado", href: "/legado" },
+  // { label: "Instalaciones", href: "/instalaciones" },
+  // { label: "Remates", href: "/remates" },
+  // { label: "Equipo", href: "/equipo" },
   { label: "Contacto", href: "/contacto" },
 ] as const;

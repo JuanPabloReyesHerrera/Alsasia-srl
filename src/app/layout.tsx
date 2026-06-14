@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
           <NavBar />
-          <main className="pt-18 flex-1">{children}</main>
+          <main className="pt-navbar flex-1">{children}</main>
           <footer className="w-full h-fit bg-muted flex items-center justify-center text-sm">
             <Footer />
           </footer>
