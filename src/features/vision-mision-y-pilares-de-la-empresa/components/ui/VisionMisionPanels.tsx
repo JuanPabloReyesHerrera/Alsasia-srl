@@ -11,11 +11,11 @@ export function VisionMisionPanels() {
 
   return (
     <div
-      className="grid grid-cols-1 md:grid-cols-2"
-      style={{
-        borderTop:
-          "1px solid color-mix(in oklch, var(--border) 80%, transparent)",
-      }}
+      className="grid grid-cols-1 md:grid-cols-2 border-t border-foreground/30"
+      // style={{
+      //   borderTop:
+      //     "1px solid color-mix(in oklch, var(--border) 80%, transparent)",
+      // }}
     >
       {DECLARACIONES.map((item, i) => {
         const isFocused = active === item.key;
@@ -30,10 +30,6 @@ export function VisionMisionPanels() {
             style={{
               paddingLeft: i === 0 ? "0" : "2.5rem",
               paddingRight: i === 0 ? "2.5rem" : "0",
-              borderRight:
-                i === 0
-                  ? "1px solid color-mix(in oklch, var(--border) 70%, transparent)"
-                  : undefined,
               opacity: isDimmed ? 0.35 : 1,
               transition: "opacity 350ms ease-out",
               cursor: "default",

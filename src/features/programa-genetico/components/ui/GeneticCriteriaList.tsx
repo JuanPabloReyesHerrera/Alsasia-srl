@@ -20,6 +20,7 @@ export function GeneticCriteriaList() {
               key={criterion.id}
               criterion={criterion}
               isFirst={i === 0}
+              index={i}
             />
           ))}
         </div>
@@ -29,6 +30,7 @@ export function GeneticCriteriaList() {
               key={criterion.id}
               criterion={criterion}
               isFirst={i === 0}
+              index={i}
             />
           ))}
         </div>

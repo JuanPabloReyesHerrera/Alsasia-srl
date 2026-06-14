@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Pilar } from "../../core/types";
+import { cn } from "@/lib/utils";
 
 interface Props {
   pilar: Pilar;
@@ -14,14 +15,17 @@ export function PillarCard({ pilar }: Props) {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="relative overflow-hidden rounded-sm p-6 group"
+      className={cn(
+        `relative overflow-hidden rounded-sm p-6 group`,
+        hovered ? "border border-accent/70" : "border border-foreground/30",
+      )}
       style={{
         backgroundColor: hovered ? "var(--surface)" : "transparent",
-        border: `1px solid ${
-          hovered
-            ? "color-mix(in oklch, var(--accent) 40%, transparent)"
-            : "color-mix(in oklch, var(--border) 90%, transparent)"
-        }`,
+        // border: `1px solid ${
+        //   hovered
+        //     ? "color-mix(in oklch, var(--accent) 40%, transparent)"
+        //     : "color-mix(in oklch, var(--border) 90%, transparent)"
+        // }`,
         transition:
           "background-color 260ms ease-out, border-color 260ms ease-out",
         cursor: "default",

@@ -9,7 +9,7 @@ export function FooterBottom() {
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
         {/* Copyright + legal */}
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5">
-          <p className="font-sans text-[0.72rem] text-foreground-subtle/60">
+          <p className="font-sans text-[0.72rem] text-foreground-subtle">
             © {currentYear} {company.name} · RUC {company.ruc}
           </p>
 
@@ -20,7 +20,7 @@ export function FooterBottom() {
               <a
                 key={href}
                 href={href}
-                className="font-sans text-[0.72rem] text-foreground-subtle/50 hover:text-accent/80 transition-colors duration-200"
+                className="font-sans text-[0.72rem] text-foreground-subtle hover:text-accent/80 transition-colors duration-200"
               >
                 {label}
               </a>
@@ -29,8 +29,8 @@ export function FooterBottom() {
         </div>
 
         {/* Tagline derecha */}
-        <p className="font-serif text-[0.75rem] italic text-foreground-subtle/40">
-          Tradición, genética y territorio · Mendoza, Argentina
+        <p className="font-serif text-[0.75rem] italic text-foreground-subtle">
+          Tradición, genética y territorio · Beni, Bolivia
         </p>
       </div>
     </div>

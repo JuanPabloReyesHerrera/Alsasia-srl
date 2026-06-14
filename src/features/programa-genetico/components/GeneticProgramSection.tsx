@@ -5,14 +5,21 @@ import {
   SectionHeader,
 } from "./ui";
 import { SECTION_CONTENT } from "../core/data";
+import { BackgroundImage } from "@/components/ui/background-image";
 
 export function GeneticProgramSection() {
   return (
     <section
       className="relative overflow-hidden"
       aria-label={SECTION_CONTENT.eyebrow}
-      style={{ backgroundColor: "var(--primary)" }}
+      // style={{ backgroundColor: "var(--primary)" }}
     >
+      <BackgroundImage imageSrc="/assets/programa-genetico.jpeg" alt="no" />
+      {/* OVERLAY */}
+      <div
+        aria-hidden
+        className="bg-linear-to-t md:bg-linear-to-l from-surface/90 from-20% via-surface/80 to-transparent fixed inset-0 h-dvh"
+      />
       {/* Subtle dot-grid texture over the wine-red background */}
       <div
         aria-hidden
@@ -32,9 +39,15 @@ export function GeneticProgramSection() {
          *
          * Stacks to single column on mobile.
          */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.65fr] gap-12 lg:gap-20">
+        <div
+          className="grid grid-cols-1 lg:grid-cols-[1fr_1.65fr] gap-12 lg:gap-20 
+        "
+        >
           {/* ── Left column ─────────────────────────────── */}
-          <div className="flex flex-col gap-8">
+          <div
+            className="flex flex-col gap-8         
+            animate-in slide-in-from-left duration-500"
+          >
             <SectionHeader />
             <PartnershipStat />
 

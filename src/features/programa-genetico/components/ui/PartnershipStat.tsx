@@ -5,13 +5,13 @@ const { partnership } = SECTION_CONTENT;
 export function PartnershipStat() {
   return (
     <div
-      className="rounded-sm p-6"
-      style={{
-        border:
-          "1px solid color-mix(in oklch, var(--primary-foreground) 14%, transparent)",
-        backgroundColor:
-          "color-mix(in oklch, var(--primary-foreground) 4%, transparent)",
-      }}
+      className="rounded-sm p-6 border border-foreground/30 bg-background/40 backdrop-blur-sm"
+      // style={{
+      //   border:
+      //     "1px solid color-mix(in oklch, var(--primary-foreground) 14%, transparent)",
+      //   backgroundColor:
+      //     "color-mix(in oklch, var(--primary-foreground) 4%, transparent)",
+      // }}
     >
       {/* Eyebrow */}
       <span className="text-eyebrow block mb-5">{partnership.eyebrow}</span>

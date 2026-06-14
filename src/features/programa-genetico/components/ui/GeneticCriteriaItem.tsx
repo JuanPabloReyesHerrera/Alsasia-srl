@@ -7,9 +7,10 @@ interface Props {
   criterion: GeneticCriterion;
   /** First item in its column gets a top border */
   isFirst?: boolean;
+  index: number;
 }
 
-export function GeneticCriteriaItem({ criterion, isFirst }: Props) {
+export function GeneticCriteriaItem({ criterion, isFirst, index }: Props) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -34,8 +35,9 @@ export function GeneticCriteriaItem({ criterion, isFirst }: Props) {
         borderRadius: "2px",
         cursor: "default",
         transition: "background-color 220ms ease-out, padding 220ms ease-out",
+        animationDelay: `${index * 150}ms`,
       }}
-      className="flex items-start gap-4"
+      className="flex items-start gap-4 animate-in fade-in-0 duration-500 fill-mode-backwards"
     >
       {/* Criterion number */}
       <span

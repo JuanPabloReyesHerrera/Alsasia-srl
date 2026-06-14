@@ -5,11 +5,11 @@ export const CONTACT_DATA = {
     founding: 1924,
     ruc: "20-12345678-9",
     description:
-      "Criamos Brahman y Angus de élite en el corazón del Beni. Selección genética, tradición familiar y pasión por la ganadería de excelencia desde 1924.",
+      "Criamos Brahman de élite en el corazón del Beni. Selección genética, tradición familiar y pasión por la ganadería de excelencia desde 1924.",
     certifications: [
       "SENASAG Habilitado",
       "Trazabilidad Bovina",
-      "Asociación Rural Argentina",
+      "Asociación Rural Boliviana",
     ],
   },
   address: {
