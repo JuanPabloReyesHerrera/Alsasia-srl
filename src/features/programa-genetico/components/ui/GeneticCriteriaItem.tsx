@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { GeneticCriterion } from "../../types";
+import type { GeneticCriterion } from "../../core/types";
 
 interface Props {
   criterion: GeneticCriterion;
