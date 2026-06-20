@@ -8,15 +8,18 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { usePathname } from "next/navigation";
 
 export function NavBar() {
+  const pathName = usePathname();
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 h-navbar border-b bg-background ">
-      <div className="h-full flex items-center justify-between px-2 md:px-6">
+      <div className="h-full flex items-center justify-between px-1 md:px-6">
         {/* Logo aquí */}
         <Button variant={"ghost"} className="hover:bg-transparent">
-          <Link href={"/"} className="flex items-center justify-start xl:gap-4">
-            <Image src={siteConfig.logo1} alt="AN" width={50} height={50} />
+          <Link href={"/"}>
+            <Image src={siteConfig.logo} alt="AN" width={65} height={65} />
           </Link>
         </Button>
 
@@ -43,7 +46,7 @@ export function NavBar() {
           >
             {/* Nuestros Toros */}
             <Image
-              src={siteConfig.logo2}
+              src={siteConfig.units.alsasia.logo}
               alt="Alsasia"
               width={150}
               height={150}

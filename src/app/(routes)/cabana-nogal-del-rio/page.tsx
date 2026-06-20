@@ -1,4 +1,4 @@
-import { GeneticProgramSection } from "@/features/programa-genetico/components";
+import { GeneticProgramSection } from "@/features/cabana-nogal-del-rio/components";
 
 export default function ProgramaGenetico() {
   return (
