@@ -101,7 +101,7 @@ export function Footer() {
 }
 
 /* ── Helper: divide NAV_LINKS en dos columnas ─────────────── */
-import { NAV_LINKS } from "@/lib/nav-links.config";
+import { NAV_LINKS } from "@/config/nav-links.config";
 import { FooterNavSection } from "./FooterNav";
 
 function FooterNavCol({ slice }: { slice: "first" | "second" }) {

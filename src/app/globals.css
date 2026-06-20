@@ -175,6 +175,7 @@
 
   html {
     scroll-behavior: smooth;
+    scrollbar-width: none;
   }
 
   body {
@@ -190,7 +191,7 @@
 
   /* ── Scrollbar ── */
   ::-webkit-scrollbar {
-    width: 5px;
+    width: none;
   }
   ::-webkit-scrollbar-track {
     background: var(--background);

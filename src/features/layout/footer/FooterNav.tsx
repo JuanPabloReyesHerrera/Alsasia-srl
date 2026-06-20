@@ -1,4 +1,4 @@
-import { NAV_LINKS } from "@/lib/nav-links.config"; // ajustá el path según tu estructura
+import { NAV_LINKS } from "@/config/nav-links.config"; // ajustá el path según tu estructura
 
 interface FooterNavProps {
   title: string;

@@ -27,7 +27,7 @@ import {
   SheetFooter,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { NAV_LINKS, type NavLink } from "../../../lib/nav-links.config";
+import { NAV_LINKS, type NavLink } from "../../../config/nav-links.config";
 
 /* ─────────────────────────────────────────────
    Props

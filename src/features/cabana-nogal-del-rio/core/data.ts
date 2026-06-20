@@ -15,7 +15,7 @@ export const SECTION_CONTENT = {
     eyebrow: "Alianza certificada",
     org: "ANCP",
     orgFull: "Associação Nacional de Criadores e Pesquisadores",
-    stat: "~600",
+    stat: "+600",
     statLabel: "animales con evaluación genética activa",
   },
 } as const;
